@@ -78,9 +78,9 @@ const genImage = () => {
     let img = new window.Image();
     img.src = props.path;
     canvasWidth.value = img.width
-    console.log("🔨🔪@zsc:: ~ file: test.vue ~ line 75 ~ returnnewPromise ~ img.width", img.width)
+    // console.log("🔨🔪@zsc:: ~ file: test.vue ~ line 75 ~ returnnewPromise ~ img.width", img.width)
     canvasHeight.value = img.height  
-    console.log("🔨🔪@zsc:: ~ file: test.vue ~ line 76 ~ returnnewPromise ~ img.height ", img.height )
+    // console.log("🔨🔪@zsc:: ~ file: test.vue ~ line 76 ~ returnnewPromise ~ img.height ", img.height )
     img.onload = () => {
       setTimeout(() => {
         resolve(img)

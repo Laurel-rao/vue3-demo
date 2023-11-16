@@ -17,7 +17,7 @@
  * 1. 因为我太菜，所以目前我只测试了 256*256 像素的图片
  * 2. unitPx 目前只支持 2、4、8、16... 这种2的倍数，一旦不是倍数就会发生bug.....
  */
-import Test from './test.vue'
+import Test from './PiTest.vue'
 import xiuxianImg from './imgs/xiuxian.png'
 import catImg from './imgs/cat.png'
 import heartImg from './imgs/heart.jpg'

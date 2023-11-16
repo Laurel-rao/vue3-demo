@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div>省：</div>
+    <span>省：</span>
     <ProvinceSelect v-model="formData.province" clearable/>
-    <div>市：</div>
+    <span>市：</span>
     <CitySelect v-model="formData.city"/>
-    <div>区：</div>
+    <span>区：</span>
     <AreaSelect v-model="formData.area"/>
   </div>
 </template>
