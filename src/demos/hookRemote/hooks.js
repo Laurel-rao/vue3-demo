@@ -8,7 +8,9 @@ const info = ref("");
 export const useCount = () => {
     const queryClient = useQueryClient()
     // todo queryKey数组意味什么，useQuery 放在外面 和 放在里面有什么区别, queryKey 放在外面能同步更新两个组件吗
-    const { mutate, isLoading } = useMutation({
+    const mutation
+        = useMutation({
+        mutationKey: ["addCount"],
         mutationFn: async() => {
             console.log("update")
             info.value = await update();
@@ -19,7 +21,7 @@ export const useCount = () => {
         }
     })
 
-    const { data } = useQuery({
+    const { data, isFetching} = useQuery({
         queryKey: ["get"],
         queryFn: async() => {
             const data = await get();
@@ -30,8 +32,8 @@ export const useCount = () => {
 
     return {
         data,
-        isLoading,
-        mutate
+        isFetching,
+        mutation
     }
 }
 

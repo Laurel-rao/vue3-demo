@@ -20,6 +20,9 @@
       <el-tab-pane label="组合式API" name="组合式API">
         <HookDemo></HookDemo>
       </el-tab-pane>
+      <el-tab-pane label="TanStackDemo" name="TanStackDemo">
+        <QueryDemo></QueryDemo>
+      </el-tab-pane>
     </el-tabs>
   </div>
 
@@ -34,4 +37,5 @@ import Pixi from './demos/pixi-tool/PiIndex.vue'
 import Table from './demos/el-table-wrap/ElIndex.vue'
 import ComIndex from './demos/composition/com_index.vue'
 import HookDemo from "@/demos/hookRemote/hookDemo.vue";
+import QueryDemo from "@/demos/hookRemote/queryDemo.vue";
 </script>
