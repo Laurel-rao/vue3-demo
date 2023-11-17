@@ -3,10 +3,15 @@
     <div>{{ data }}</div>
 <!--    <div v-if="isPending">{{ isPending }}</div>-->
 <!--    <div v-if="!isPending">{{ isPending }}</div>-->
+    <span v-if="isPending">Adding todo...</span>
+    <span v-else-if="isError">An error occurred:</span>
+    <span v-else-if="isSuccess">Todo added!</span>
+    <hr>
     <div>isFetching: {{isFetching}}</div>
-    <div>isPending: {{mutation.isPending}}</div>
-    <div>isPaused: {{mutation.isPaused}}</div>
-    <div>isIdle: {{mutation.isIdle}}</div>
+    <hr>
+    {{status}}
+    <hr>
+    <div @click="mutate"><button>父组件添加</button></div>
   </div>
   <HookDemo2></HookDemo2>
 </template>
@@ -18,6 +23,7 @@ import {useCount} from "@/demos/hookRemote/hooks";
 const {
   data,
   isFetching,
-  mutation,
+  status,
+  mutate
   } = useCount();
 </script>

@@ -3,7 +3,7 @@ import {useMutation, useQuery, useQueryClient} from '@tanstack/vue-query'
 import axios from "axios";
 const queryClient = useQueryClient()
 
-const { isPending, isError, error, isSuccess, mutate } = useMutation({
+const { isPending, isError, error, mutate, isSuccess, status} = useMutation({
   mutationFn: () => axios.get('http://127.0.0.1:5000/update'),
   onSuccess: (() => {
     queryClient.invalidateQueries({queryKey: ["get"]})
@@ -19,7 +19,7 @@ const { data:count, isFetching } = useQuery({
   //   console.log(data.data.count)
   //   return data.data.count
   // }
-  // 第二种 promise
+
   queryFn: () => axios.get("http://127.0.0.1:5000/get").then( data => {
     return data.data.count
   })
@@ -31,6 +31,8 @@ const { data:count, isFetching } = useQuery({
   <span v-if="isPending">Adding todo...</span>
   <span v-else-if="isError">An error occurred: {{ error.message }}</span>
   <span v-else-if="isSuccess">Todo added!</span>
+  <hr>
+  <span>{{status}}</span>
   <hr>
   <button @click="mutate">Create Todo</button>
   <span>query: {{count}}</span>
